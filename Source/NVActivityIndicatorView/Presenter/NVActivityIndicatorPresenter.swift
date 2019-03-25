@@ -225,6 +225,15 @@ public final class NVActivityIndicatorPresenter {
 
     private init() {}
 
+    public var noInternetListener: NoInternetListener!
+    private var skipButton: UIButton!
+    
+    @objc func buttonTapped(_ sender: UIGestureRecognizer){
+        if noInternetListener != nil {
+            noInternetListener.openNoInternetVC()
+        }
+    }
+    
     // MARK: - Public interface
 
     /**
@@ -331,4 +340,8 @@ public final class NVActivityIndicatorPresenter {
             }
         }
     }
+}
+
+public protocol NoInternetListener {
+    func openNoInternetVC()
 }

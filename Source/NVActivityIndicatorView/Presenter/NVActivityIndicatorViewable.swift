@@ -88,4 +88,8 @@ public extension NVActivityIndicatorViewable where Self: UIViewController {
     public func stopAnimating(_ fadeOutAnimation: FadeOutAnimation? = NVActivityIndicatorView.DEFAULT_FADE_OUT_ANIMATION) {
         NVActivityIndicatorPresenter.sharedInstance.stopAnimating(fadeOutAnimation)
     }
+    
+    public func setNoInternetListener(_ listener: NoInternetListener) {
+        NVActivityIndicatorPresenter.sharedInstance.noInternetListener = listener
+    }
 }
